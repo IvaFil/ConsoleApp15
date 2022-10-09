@@ -10,34 +10,26 @@ namespace ConsoleApp15
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите число M: ");
-            int m = Convert.ToInt32(Console.ReadLine());
+			void PrintInterval(int m, int n)
+			{
+				int start = m;
+				int end = n;
+				if (m > n)
+				{
+					start = n;
+					end = m;
+				}
+				for (int i = start; i <= end; i++)
+				{
+					Console.Write($"{i} ");
+				}
+			}
+			PrintInterval(7, 34);
 
-            Console.Write("Введите число N: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine();
 
-            SumMToN(m, n);
+			
 
-            
-            void SumMToN(int m, int n)
-            {
-                Console.Write(SumMN(m - 1, n));
-            }
-
-            
-            int SumMN(int m, int n)
-            {
-                int res = m;
-                if (m == n)
-                    return 0;
-                else
-                {
-                    m++;
-                    res = m + SumMN(m, n);
-                    return res;
-                }
-            } 
-
-        }
+		}
     }
 }
